@@ -342,6 +342,7 @@ class Video extends Component {
       logo,
       rate,
       style,
+      sliderStyle,
       volume,
       placeholder,
       theme,
@@ -419,6 +420,7 @@ class Video extends Component {
           onMorePress={() => onMorePress()}
           theme={setTheme}
           inlineOnly={inlineOnly}
+          sliderStyle={sliderStyle}
         />
       </Animated.View>
     )
@@ -440,6 +442,10 @@ Video.propTypes = {
     PropTypes.number
   ]),
   style: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.number
+  ]),
+  sliderStyle: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number
   ]),
@@ -475,6 +481,7 @@ Video.propTypes = {
 Video.defaultProps = {
   placeholder: undefined,
   style: {},
+  sliderStyle: {},
   error: true,
   loop: false,
   autoPlay: false,
