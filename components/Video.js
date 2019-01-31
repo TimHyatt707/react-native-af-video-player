@@ -9,8 +9,7 @@ import {
   Animated,
   Image,
   TouchableOpacity,
-  Alert,
-  Platform
+  Alert
 } from 'react-native'
 import VideoPlayer from 'react-native-video'
 import KeepAwake from 'react-native-keep-awake'
@@ -402,8 +401,6 @@ class Video extends Component {
           onError={e => this.onError(e)}
           // onBuffer={() => this.onBuffer()} // Callback when remote video is buffering
           onTimedMetadata={e => onTimedMetadata(e)} // Callback when the stream receive some metadata
-          fullscreen={Platform.OS === 'ios' && fullScreen}
-          controls
         />
         <Controls
           ref={(ref) => { this.controls = ref }}
